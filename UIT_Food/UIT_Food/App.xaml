@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIT_Food.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="Avo"
+                        x:TypeArguments="x:String"
+                        iOS="UTMAvo"
+                        Android="UTMAvo"/>
+            <OnPlatform x:Key="AvoBold"
+                        x:TypeArguments="x:String"
+                        iOS="UTMAvoBold"
+                        Android="UTMAvoBold"/>
+            <Color x:Key="TextColor">#6B4E3C</Color>
+            <Color x:Key="BgColor">#FDF2D7</Color>
+            <Color x:Key="AccentColor">#D1775A</Color>
+            <Color x:Key="DarkAccentColor">#6B4E3C</Color>
+            <Color x:Key="MainColor">#FDF2D7</Color>
+            <Color x:Key="WhiteColor">#FCF9EE</Color>
+
+            <Style TargetType="Frame" x:Key="EntryFrame">
+                <Setter Property="IsClippedToBounds" Value="True"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="15"/>
+            </Style>
+
+            <Style TargetType="Frame" x:Key="ButtonFrame">
+                <Setter Property="IsClippedToBounds" Value="True"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="LabelDefaultStyle">
+                <Setter Property="FontFamily" Value="{StaticResource Avo}"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="LabelTitleStyle">
+                <Setter Property="FontFamily" Value="{StaticResource AvoBold}"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+            
+            <Style TargetType="Label" x:Key="LabelWellcomeStyle">
+                <Setter Property="FontFamily" Value="{StaticResource AvoBold}"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

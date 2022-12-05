@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{StaticResource MainColor}"
+             xmlns:controls="clr-namespace:UIT_Food"
+             x:Class="UIT_Food.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="logo.png"  Margin="20,80,20,0" 
+                   Aspect="AspectFit" WidthRequest="150" 
+                   Grid.Row="0" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+            <Label Text="UIT FOOD" HorizontalOptions="Center" 
+                       Style="{StaticResource LabelWellcomeStyle}"
+                        Grid.Row="1" TextColor="{StaticResource TextColor}"></Label>
+
+            <Frame Grid.Row="2" Margin="20,5"
+                       Style="{StaticResource EntryFrame}">
+
+                <controls:CustomEntry   x:Name="Username"
+                                        Placeholder="Tài khoản / Email"
+                                        FontFamily="{StaticResource Avo}" PlaceholderColor="{StaticResource TextColor}"                
+                                        FontSize="18" TextColor="{StaticResource TextColor}" 
+                                        HeightRequest="60" Margin="20,0"/>
+            </Frame>
+            <Frame Grid.Row="3" Margin="20,5"
+                       Style="{StaticResource EntryFrame}">
+
+                <controls:CustomEntry   x:Name="Pass" Placeholder="Mật khẩu" 
+                                        IsPassword="True" FontFamily="{StaticResource Avo}"
+                                        PlaceholderColor="{StaticResource TextColor}"
+                                        FontSize="18" TextColor="{StaticResource TextColor}"
+                                        HeightRequest="60" Margin="20,0"/>
+
+            </Frame>
+            <Frame Grid.Row="5" Margin="50,10"
+                       Style="{StaticResource ButtonFrame}">
+                <Button x:Name="BtnLogin" Text="Đăng nhập" 
+                            FontFamily="{StaticResource Avo}" 
+                            FontSize="18" TextColor="White" 
+                            BackgroundColor="{StaticResource AccentColor}" 
+                        Clicked="BtnLogin_Clicked"
+                            />
+            </Frame>
+            <Frame Grid.Row="6" Margin="50,10"
+                       Style="{StaticResource ButtonFrame}">
+                <Button x:Name="BtnRegister" Text="Đăng ký tài khoản" 
+                            FontFamily="{StaticResource Avo}" FontSize="18" 
+                            TextColor="{StaticResource TextColor}"
+                            BackgroundColor="White" Clicked="BtnRegister_Clicked"/>
+            </Frame>
+            <Label Style="{StaticResource LabelTitleStyle}" 
+                       Grid.Row="7" VerticalTextAlignment="Center" 
+                       TextColor="{StaticResource TextColor}" HorizontalTextAlignment="Center" 
+                       Text="Quên mật khẩu?" 
+                       FontSize="15"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:UIT_Food"
+             BackgroundColor="{StaticResource BgColor}"
+             x:Class="UIT_Food.Views.HomePage">
+    <ContentPage.Content>
+       
+            <StackLayout>
+                <AbsoluteLayout HeightRequest="80" Margin="20,0,20,0" 
+                                HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Image Source="UITFood.png" AbsoluteLayout.LayoutBounds="0,0,1,1"  
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+            <Frame  x:Name="Location"
+                            Grid.ColumnSpan="2" HeightRequest="40" 
+                            CornerRadius="25" HasShadow="True" 
+                            IsClippedToBounds="True" Padding="0" Margin="20,0">
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Frame HeightRequest="40" WidthRequest="40" 
+                                CornerRadius="25"    Padding="0" 
+                                   BackgroundColor="{StaticResource AccentColor}"
+                                   >
+
+                        <StackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+
+                            <Image x:Name="GetLct"  Source="location.png"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" HeightRequest="20"
+                                           WidthRequest="20" Aspect="AspectFit"/>
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <Label x:Name="LabelLocation" Text="Vị trí của bạn" Margin="5,0" 
+                                   VerticalTextAlignment="Center" HorizontalOptions="End" 
+                                   Style="{StaticResource LabelDefaultStyle}" FontSize="18">
+                    </Label>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="GetLocation" Tapped="GetLocation_Tapped"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                 <StackLayout>  
+                    
+
+                    <Label Margin="20,10" 
+                       Style="{StaticResource LabelTitleStyle}"
+                       FontSize="30"
+                       Text="Danh Mục"/>
+                
+                    <Grid Margin="20,0" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Frame Grid.Column="0" Grid.Row="0" 
+                           HeightRequest="120" 
+                           BackgroundColor="{StaticResource WhiteColor}" 
+                           CornerRadius="5" HasShadow="True" 
+                           IsClippedToBounds="True" Padding="0">
+                        
+                        <StackLayout VerticalOptions="Center" Margin="5,0">
+                            
+                            <Image Source="friedchicken.png" WidthRequest="50" 
+                                   HeightRequest="50" Aspect="AspectFit"/>
+                            
+                            <Label Text="Đồ ăn nhanh" 
+                                   Style="{StaticResource LabelDefaultStyle}" 
+                                   HorizontalTextAlignment="Center"
+                                   />
+                            
+                        </StackLayout>
+                        
+                    </Frame>
+                    
+                    <Frame Grid.Column="1" Grid.Row="0" 
+                           HeightRequest="120" 
+                           BackgroundColor="{StaticResource WhiteColor}" 
+                           CornerRadius="5" HasShadow="True" 
+                           IsClippedToBounds="True" Padding="0">
+                        
+                        <StackLayout VerticalOptions="Center">
+                            
+                            <Image Source="bubbletea.png" WidthRequest="50" 
+                                   HeightRequest="50" Aspect="AspectFit"/>
+                            
+                            <Label Text="Đồ uống" 
+                                   Style="{StaticResource LabelDefaultStyle}" 
+                                   HorizontalTextAlignment="Center"/>
+                            
+                        </StackLayout>
+                        
+                    </Frame>
+                    
+                    <Frame Grid.Column="2" Grid.Row="0" 
+                           HeightRequest="120" 
+                           BackgroundColor="{StaticResource WhiteColor}" 
+                           CornerRadius="5" HasShadow="True" 
+                           IsClippedToBounds="True" Padding="0">
+                        
+                        <StackLayout VerticalOptions="Center">
+                            
+                            <Image Source="hamburger.png" WidthRequest="50" 
+                                   HeightRequest="50" Aspect="AspectFit"/>
+                            
+                            <Label Text="Hamburger" 
+                                   Style="{StaticResource LabelDefaultStyle}" 
+                                   HorizontalTextAlignment="Center"/>
+                            
+                        </StackLayout>
+                        
+                    </Frame>
+                    
+                </Grid>
+
+                    <Label Margin="20,0" 
+                       Style="{StaticResource LabelTitleStyle}"
+                       FontSize="30"
+                       Text="Nổi bật"/>
+                
+                    <ScrollView Orientation="Horizontal" Margin="20,10,0,20" 
+                            HorizontalScrollBarVisibility="Never">
+                    
+                    <StackLayout Orientation="Horizontal">
+                        
+                        <Frame x:Name="F1" x:Uid="123" 
+                               CornerRadius="5" HasShadow="True" 
+                               WidthRequest="250" Padding="0" 
+                               IsClippedToBounds="True" Margin="0,5,0,5">
+                            
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                
+                                <Frame Padding="0" HasShadow="False" 
+                                       CornerRadius="5" IsClippedToBounds="True" 
+                                       Margin="10,0,0,0">
+                                    
+                                    <Image x:Name="Hinh1" HeightRequest="170" 
+                                           Aspect="AspectFill" 
+                                           Source="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"/>
+                                </Frame>
+                                
+                                <Label x:Name="Ten1" Text="Pasta food" 
+                                       Style="{StaticResource LabelTitleStyle}" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                            <Image Source="place_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="2.2Km" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                            <Image Source="oclock_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="20-30m" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                    </Grid>
+                                    
+                                </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="2" 
+                                         BackgroundColor="{StaticResource BgColor}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="imoji" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="8.9" VerticalTextAlignment="Center" 
+                                           Style="{StaticResource LabelWellcomeStyle}" 
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="/10" VerticalOptions="Center" 
+                                           Style="{StaticResource LabelTitleStyle}" 
+                                           HorizontalOptions="StartAndExpand"/>
+                                    
+                                    <Image Source="plus" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="End"/>
+                                    
+                                </StackLayout>
+                                
+                            </StackLayout>
+                            
+                        </Frame>
+
+                        <Frame CornerRadius="5" HasShadow="True" 
+                               WidthRequest="250" Padding="0" 
+                               IsClippedToBounds="True" Margin="0,5,0,5">
+                            
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                
+                                <Frame Padding="0" HasShadow="False" 
+                                       CornerRadius="5" IsClippedToBounds="True" 
+                                       Margin="10,0,0,0">
+                                    
+                                    <Image x:Name="Hinh2" HeightRequest="170"  
+                                           Aspect="AspectFill" 
+                                           Source="https://i0.wp.com/thue-studio.com/wp-content/uploads/2019/09/7eleven-1.jpg"/>
+                                </Frame>
+                                
+                                <Label x:Name="Ten2" Text="Pasta food" 
+                                       Style="{StaticResource LabelTitleStyle}" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                            <Image Source="place_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="2.2Km" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                            
+                                            <Image Source="oclock_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="20-30m" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                    </Grid>
+                                    
+                                </StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="2" 
+                                         BackgroundColor="{StaticResource BgColor}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="imoji" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="8.9" VerticalTextAlignment="Center"
+                                           Style="{StaticResource LabelWellcomeStyle}" 
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="/10" VerticalOptions="Center" 
+                                           Style="{StaticResource LabelTitleStyle}" 
+                                           HorizontalOptions="StartAndExpand"/>
+                                    
+                                    <Image Source="plus" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="End"/>
+                                    
+                                </StackLayout>
+                                
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame CornerRadius="5" HasShadow="True" 
+                               WidthRequest="250" Padding="0" 
+                               IsClippedToBounds="True" Margin="0,5,0,5">
+                            
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                
+                                <Frame Padding="0" HasShadow="False" 
+                                       CornerRadius="5" IsClippedToBounds="True" 
+                                       Margin="10,0,0,0">
+                                    
+                                    <Image x:Name="Hinh3" HeightRequest="170"  
+                                           Aspect="AspectFill"  
+                                           Source="https://www.travel141.com.vn/wp-content/uploads/2017/05/13735539_1148687785191642_3258629851337651043_o-1-1200x800.jpg"/>
+                                </Frame>
+                                
+                                <Label x:Name="Ten3" Text="Pasta food" 
+                                       Style="{StaticResource LabelTitleStyle}" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                            <Image Source="place_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="2.2Km" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                            
+                                            <Image Source="oclock_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="20-30m" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                    </Grid>
+                                </StackLayout>
+                                
+                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="2" 
+                                         BackgroundColor="{StaticResource BgColor}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="imoji" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="8.9" VerticalTextAlignment="Center" 
+                                           Style="{StaticResource LabelWellcomeStyle}" 
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="/10" VerticalOptions="Center" 
+                                           Style="{StaticResource LabelTitleStyle}"
+                                           HorizontalOptions="StartAndExpand"/>
+                                    
+                                    <Image Source="plus" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="End"/>
+                                    
+                                </StackLayout>
+                                
+                            </StackLayout>
+                            
+                        </Frame>
+
+                        <Frame CornerRadius="5" HasShadow="True" 
+                               WidthRequest="250" Padding="0" 
+                               IsClippedToBounds="True" Margin="0,5,0,5">
+                            
+                            <Frame.GestureRecognizers>
+                                
+                                <TapGestureRecognizer/>
+                                
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                
+                                <Frame Padding="0" HasShadow="False" 
+                                       CornerRadius="5" IsClippedToBounds="True"
+                                       Margin="10,0,0,0">
+                                    
+                                    <Image x:Name="Hinh4" HeightRequest="170" 
+                                           Aspect="AspectFill" 
+                                           Source="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"/>
+                                </Frame>
+                                
+                                <Label x:Name="Ten4" Text="Pasta food" 
+                                       Style="{StaticResource LabelTitleStyle}" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                            <Image Source="place_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            <Label Text="2.2Km" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                            
+                                            <Image Source="oclock_dark" 
+                                                   WidthRequest="20" HeightRequest="20"/>
+                                            
+                                            <Label Text="20-30m" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                    </Grid>
+                                    
+                                </StackLayout>
+                                
+                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="2" 
+                                         BackgroundColor="{StaticResource BgColor}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="imoji" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="8.9" VerticalTextAlignment="Center" 
+                                           Style="{StaticResource LabelWellcomeStyle}" 
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="/10" VerticalOptions="Center" 
+                                           Style="{StaticResource LabelTitleStyle}"
+                                           HorizontalOptions="StartAndExpand"/>
+                                    
+                                    <Image Source="plus" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="End"/>
+                                    
+                                </StackLayout>
+                                
+                            </StackLayout>
+                            
+                        </Frame>
+
+                        <Frame CornerRadius="5" HasShadow="True" 
+                               WidthRequest="250" Padding="0" 
+                               IsClippedToBounds="True" Margin="0,5,10,5">
+                            
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            
+                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                
+                                <Frame Padding="0" HasShadow="False" 
+                                       CornerRadius="5" IsClippedToBounds="True"
+                                       Margin="10,0,0,0">
+                                    
+                                    <Image x:Name="Hinh5" HeightRequest="170"  
+                                           Aspect="AspectFill"  
+                                           Source="https://i0.wp.com/www.agoda.com/wp-content/uploads/2019/05/Jeddah-food-Tabouleh-and-mixed-grilled-meats.jpg"/>
+                                </Frame>
+                                
+                                <Label x:Name="Ten5" Text="Pasta food" 
+                                       Style="{StaticResource LabelTitleStyle}" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                            <Image Source="place_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="2.2Km" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                            
+                                            <Image Source="oclock_dark" WidthRequest="20" 
+                                                   HeightRequest="20"/>
+                                            
+                                            <Label Text="20-30m" 
+                                                   Style="{StaticResource LabelTitleStyle}"/>
+                                            
+                                        </StackLayout>
+                                    </Grid>
+                                    
+                                </StackLayout>
+                                
+                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         HeightRequest="2" 
+                                         BackgroundColor="{StaticResource BgColor}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="imoji" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="8.9" VerticalTextAlignment="Center" 
+                                           Style="{StaticResource LabelWellcomeStyle}" 
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <Label Text="/10" VerticalOptions="Center" 
+                                           Style="{StaticResource LabelTitleStyle}" 
+                                           HorizontalOptions="StartAndExpand"/>
+                                    
+                                    <Image Source="plus" WidthRequest="50" 
+                                           HeightRequest="50" HorizontalOptions="End"/>
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

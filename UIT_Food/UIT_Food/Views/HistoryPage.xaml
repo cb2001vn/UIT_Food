@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIT_Food.Views.HistoryPage"
+             BackgroundColor="{StaticResource BgColor}"
+             Title="Lịch sử đặt hàng">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="LstHistory" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Frame CornerRadius="5" HasShadow="True" Grid.Column="1" Padding="0"  Margin="0,5,0,5" >
+                                        <StackLayout Orientation="Vertical" Margin="20,10,10,10">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="Số hóa đơn" Grid.Row="0" Grid.Column="0" 
+                                                       Style="{StaticResource LabelTitleStyle}"></Label>
+                                                <Label Text="{Binding MAHD}" Grid.Row="0" Grid.Column="1"  
+                                                       Style="{StaticResource LabelTitleStyle}" />
+                                                <Label Text="Tổng tiền" Grid.Row="1" Grid.Column="0" 
+                                                       Style="{StaticResource LabelTitleStyle}"></Label>
+                                                <Label Text="{Binding TONGTIEN}" Grid.Row="1" Grid.Column="1" 
+                                                       Style="{StaticResource LabelTitleStyle}" />
+                                                <Label Text="Thời gian" Grid.Row="2" Grid.Column="0" 
+                                                       Style="{StaticResource LabelTitleStyle}"></Label>
+                                                
+                                                <Label Text="{Binding TGDAT}" Grid.Column="1" Grid.Row="2" 
+                                                       VerticalOptions="End" FontAttributes="Bold"  
+                                                       FontSize="16" Style="{StaticResource LabelWellcomeStyle}"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                    <!--<Stepper Maximum="360" Value="{Binding SOLUONG}"
+                                                Increment="1"                                                 
+                                                HorizontalOptions="End"
+                                                ValueChanged="Stepper_ValueChanged"
+                                            
+                                                />-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

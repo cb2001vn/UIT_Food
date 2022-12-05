@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIT_Food.Views.PersonalPage"
+             BackgroundColor="{StaticResource BgColor}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Style="{StaticResource LabelTitleStyle}" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center" Text="Tài khoản" Margin="10" TextTransform="Uppercase"/>
+
+                <Frame x:Name="Person" VerticalOptions="CenterAndExpand" HeightRequest="450">
+                    
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Image Source="https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png" />
+
+                        <Label x:Name="lbName" Text="Khách" 
+                               Style="{StaticResource LabelTitleStyle}" 
+                               HorizontalOptions="Center" FontSize="25"/>
+                        
+                        <Label  Text="Thông tin:" Style="{StaticResource LabelTitleStyle}"/>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label  Text="SĐT:" 
+                                    Style="{StaticResource LabelTitleStyle}" 
+                                    FontSize="17" Grid.Column="0" Grid.Row="0"/>
+
+                            <Label x:Name="lbSDT" Text="Trống" 
+                                   Style="{StaticResource LabelTitleStyle}" 
+                                   Grid.Column="1" Grid.Row="0" 
+                                   FontAttributes="Italic" FontSize="17" 
+                                   HorizontalOptions="End" VerticalOptions="Center"/>
+                           
+
+                            <Label Text="Email:" 
+                                   Style="{StaticResource LabelTitleStyle}" 
+                                   FontSize="17" Grid.Column="0" Grid.Row="1" />
+                                
+
+                            <Label x:Name="lbEmail" Text="Trống" 
+                                   Style="{StaticResource LabelTitleStyle}" 
+                                   Grid.Column="1" Grid.Row="1" 
+                                   FontAttributes="Italic" FontSize="17"  
+                                   HorizontalOptions="End"  VerticalOptions="Center"/>
+                            
+                        </Grid>
+
+                        <BoxView BackgroundColor="{StaticResource AccentColor}" 
+                                 HeightRequest="1.8" Margin="0,20,0,20"/>
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" 
+                                   Text="Chỉnh sửa thông tin" BackgroundColor="White" 
+                                   Style="{StaticResource LabelTitleStyle}"  
+                                   Padding="0,5,10,5" 
+                                   VerticalOptions="End" 
+                                   HorizontalTextAlignment="Start"/>
+
+                            <Label Grid.Row="1" 
+                                   Text="Lịch sử đặt hàng" 
+                                   BackgroundColor="White"
+                                   Style="{StaticResource LabelTitleStyle}"  
+                                   Padding="0,5,10,5"
+                                   VerticalOptions="End" 
+                                   HorizontalTextAlignment="Start"/>
+
+                            <ImageButton    x:Name="LblChangeInfo"
+                                            Source="next.png"
+                                            CornerRadius="15"
+                                            BackgroundColor="White"
+                                            WidthRequest="30" HeightRequest="30"
+                                            VerticalOptions="End"
+                                            Grid.Row="0"
+                                            HorizontalOptions="End"
+                                            Clicked="ChangeInfo_Tapped"/>
+
+                            <ImageButton    x:Name="ImgHistory"
+                                            CornerRadius="15"
+                                            Source="next.png" 
+                                            WidthRequest="30" HeightRequest="30"
+                                            Grid.Row="1"
+                                            HorizontalOptions="End" VerticalOptions="End" 
+                                            BackgroundColor="white" 
+                                            Clicked="History_Tapped"/>
+
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="20" HeightRequest="50">
+                    
+                <Frame x:Name="Setting" BackgroundColor="{StaticResource AccentColor}" 
+                       WidthRequest="80" Padding="5,10" CornerRadius="10">
+                    
+                        <Image Source="settings.png"/>
+                    
+                </Frame>
+
+                <Button x:Name="BtnLogout"  Text="Đăng xuất"  
+                        BackgroundColor="LightGray" TextColor="White" 
+                        Style="{StaticResource LabelTitleStyle}" 
+                        CornerRadius="10" HorizontalOptions="EndAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        FontSize="18" ></Button>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

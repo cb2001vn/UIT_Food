@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:UIT_Food"
+             x:Class="UIT_Food.Views.UpdatePage"
+             BackgroundColor="{StaticResource BgColor}"
+             Title="Chỉnh sửa thông tin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="Họ và tên"
+                               Style="{StaticResource LabelTitleStyle}" 
+                               FontSize="17" Padding="20,10,10,0"/>
+
+                    <Frame Margin="10,0" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomEntry x:Name="InputName" 
+                                              Placeholder="Nhập họ tên"  PlaceholderColor="{StaticResource TextColor}"
+                                      
+                                              Style="{StaticResource LabelDefaultStyle}" 
+                                              HeightRequest="60" Margin="10,0,10,0"/>
+                    </Frame>
+
+                    <Label Text="Số điện thoại" 
+                               Style="{StaticResource LabelTitleStyle}"
+                               FontSize="17" Margin="20,10,10,0"/>
+
+                    <Frame Margin="10,0" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomEntry x:Name="InputPhone" 
+                                              Placeholder="Nhập số điện thoại"  PlaceholderColor="{StaticResource TextColor}"
+                                              Keyboard="Telephone"
+                                              Style="{StaticResource LabelDefaultStyle}" 
+                                              HeightRequest="60" Margin="10,0,10,0"/>
+                    </Frame>
+
+                    <Label Text="Email" 
+                               Style="{StaticResource LabelTitleStyle}" 
+                               FontSize="17" Margin="20,10,0,0"/>
+
+                    <Frame Margin="10,0" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomEntry x:Name="InputEmail" 
+                                              Placeholder="Nhập email"  PlaceholderColor="{StaticResource TextColor}"
+                                              Keyboard="Email"
+                                              Style="{StaticResource LabelDefaultStyle}" 
+                                              HeightRequest="60" Margin="10,0,10,0"/>
+                    </Frame>
+
+                    <Label Text="Ngày sinh" 
+                               Style="{StaticResource LabelTitleStyle}" 
+                               FontSize="17" Margin="20,10,0,0"/>
+
+                    <Frame Margin="10,0" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomDatePicker  x:Name="InputDOB"  
+                                                    Style="{StaticResource LabelDefaultStyle}" 
+                                                    BackgroundColor="White" Margin="10,0,10,0" />
+                    </Frame>
+
+                    <Label Text="Mật khẩu" 
+                               Style="{StaticResource LabelTitleStyle}" 
+                               FontSize="17" Margin="20,10,0,0"/>
+                    <Frame Margin="10,0" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomEntry x:Name="InputOldPass" 
+                                              Placeholder="Nhập mật khẩu cũ" PlaceholderColor="{StaticResource TextColor}"
+                                              IsPassword="True"  
+                                              BackgroundColor="White" FontFamily="{StaticResource Avo}" 
+                                              FontSize="15" TextColor="{StaticResource TextColor}" 
+                                              HeightRequest="60" Margin="10,0,10,0"/>
+                    </Frame>
+                    
+                    <Frame Margin="10,10" CornerRadius="5"
+                               Style="{StaticResource EntryFrame}">
+                        <controls:CustomEntry x:Name="InputNewPass" 
+                                              Placeholder="Nhập mật khẩu mới" PlaceholderColor="{StaticResource TextColor}"
+                                              IsPassword="True"  
+                                              BackgroundColor="White" FontFamily="{StaticResource Avo}" 
+                                              FontSize="15" TextColor="{StaticResource TextColor}" 
+                                              HeightRequest="60" Margin="10,10,10,0"/>
+                    </Frame>
+                </StackLayout>
+                
+                <Button x:Name="BtnUpdate" Text="Cập nhật" 
+                        Style="{StaticResource LabelTitleStyle}" 
+                        TextColor="White" BackgroundColor="{StaticResource AccentColor}" 
+                        FontSize="17" WidthRequest="120"
+                        HorizontalOptions="Center"   VerticalOptions="EndAndExpand"
+                        CornerRadius="15" Margin="20" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
