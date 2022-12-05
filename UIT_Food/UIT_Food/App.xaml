@@ -18,6 +18,7 @@
             <Color x:Key="DarkAccentColor">#6B4E3C</Color>
             <Color x:Key="MainColor">#FDF2D7</Color>
             <Color x:Key="WhiteColor">#FCF9EE</Color>
+            <Color x:Key="YellowColor">#FCC419</Color>
 
             <Style TargetType="Frame" x:Key="EntryFrame">
                 <Setter Property="IsClippedToBounds" Value="True"/>
