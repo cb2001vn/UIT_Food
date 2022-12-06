@@ -29,7 +29,6 @@ namespace UIT_Food.Views
             var ResList = await httpClient.GetStringAsync("http://192.168.1.148/webapi/api/RestaurantController/GetNhaHang");
             var RestListCV = JsonConvert.DeserializeObject<List<Restaurant>>(ResList);
             restaurants = RestListCV;
- 
 
             Name1.Text = restaurants[5].TEN;
             Name2.Text = restaurants[6].TEN;
@@ -43,7 +42,7 @@ namespace UIT_Food.Views
         {
             try
             {
-                var location = await Geolocation.GetLocationAsync();
+                var location = await Geolocation.GetLastKnownLocationAsync();
                 if (location == null)
                 {
                     location = await Geolocation.GetLocationAsync(new GeolocationRequest
@@ -52,17 +51,20 @@ namespace UIT_Food.Views
                         Timeout = TimeSpan.FromSeconds(30)
                     });
                 }
+                Console.WriteLine("Kết quả: " + location);
                 if (location == null)
                     LabelLocation.Text = "No GPS";
                 else
                 {
                     var placemarks = await Geocoding.GetPlacemarksAsync(location.Latitude, location.Longitude);
                     var placemark = placemarks?.FirstOrDefault();
-                    var Provine = placemark.AdminArea;
+                    var City = placemark.AdminArea;
                     var District = placemark.SubAdminArea;
-                    var SubAdd1 = placemark.FeatureName;
-                    var SubAdd2 = placemark.Thoroughfare;
-                    var tempaddress = SubAdd2 + ", " + SubAdd1 + ", " + District + ", " + Provine;
+                    var Number = placemark.FeatureName;
+                    var Street = placemark.Thoroughfare;
+                    Console.WriteLine("Kết quả: " + Street);
+                    var tempaddress = Number  + ", " + Street + ", " + District + ", " + City;
+                    
                     LabelLocation.Text = tempaddress;
                 }
             }
@@ -70,6 +72,31 @@ namespace UIT_Food.Views
             {
                 await DisplayAlert("Error !!!", "Something's wrong", "Try again!");
             }
+        }
+
+        private void Restaurant1_Tapped(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void Restaurant2_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Restaurant3_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Restaurant4_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Restaurant5_Tapped(object sender, EventArgs e)
+        {
+
         }
     }
 }

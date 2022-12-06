@@ -4,8 +4,8 @@
              BackgroundColor="{StaticResource BgColor}"
              x:Class="UIT_Food.Views.HomePage">
     <ContentPage.Content>
-       
-            <StackLayout>
+        <StackLayout>
+                
             <AbsoluteLayout HeightRequest="80" Margin="20,0,20,0" 
                                 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <Image  Source="UITFood.png" AbsoluteLayout.LayoutBounds="0,0,1,1"  
@@ -36,8 +36,8 @@
                     </Frame>
 
                     <Label x:Name="LabelLocation" Text="Vị trí của bạn" Margin="5,0" 
-                                   VerticalTextAlignment="Center" HorizontalOptions="End" 
-                                   Style="{StaticResource LabelDefaultStyle}" FontSize="18">
+                                   VerticalTextAlignment="Center" HorizontalOptions="End"
+                                   Style="{StaticResource LabelDefaultStyle}" FontSize="18" MaxLines="1" WidthRequest="280">
                     </Label>
                 </StackLayout>
                 <Frame.GestureRecognizers>
@@ -136,6 +136,9 @@
 
                             <Frame x:Name="Frame1" CornerRadius="5" HasShadow="True" Padding="15"
                                    IsClippedToBounds="True" BackgroundColor="White" Margin="0,0,10,0" >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="Restaurant1" Tapped="Restaurant1_Tapped"/>
+                                </Frame.GestureRecognizers>
 
                                 <StackLayout Orientation="Vertical" Spacing="5"  >
 
@@ -208,6 +211,10 @@
 
                             <Frame x:Name="Frame2" CornerRadius="5" HasShadow="True" Padding="15"
                                    IsClippedToBounds="True" BackgroundColor="White" Margin="0,0,10,0" >
+                                
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="Restaurant2" Tapped="Restaurant2_Tapped"/>
+                                </Frame.GestureRecognizers>
 
                                 <StackLayout Orientation="Vertical" Spacing="5"  >
 
@@ -281,6 +288,10 @@
                             <Frame x:Name="Frame3" CornerRadius="5" HasShadow="True" Padding="15"
                                    IsClippedToBounds="True" BackgroundColor="White" Margin="0,0,10,0" >
 
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="Restaurant3" Tapped="Restaurant3_Tapped"/>
+                                </Frame.GestureRecognizers>
+
                                 <StackLayout Orientation="Vertical" Spacing="5"  >
 
                                     <Frame Padding="0" HasShadow="False" 
@@ -353,6 +364,10 @@
                             <Frame x:Name="Frame4" CornerRadius="5" HasShadow="True" Padding="15"
                                    IsClippedToBounds="True" BackgroundColor="White" Margin="0,0,10,0" >
 
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="Restaurant4" Tapped="Restaurant4_Tapped"/>
+                                </Frame.GestureRecognizers>
+
                                 <StackLayout Orientation="Vertical" Spacing="5"  >
 
                                     <Frame Padding="0" HasShadow="False" 
@@ -424,6 +439,10 @@
 
                             <Frame x:Name="Frame5" CornerRadius="5" HasShadow="True" Padding="15"
                                    IsClippedToBounds="True" BackgroundColor="White" Margin="0,0,10,0" >
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="Restaurant5" Tapped="Restaurant5_Tapped"/>
+                                </Frame.GestureRecognizers>
 
                                 <StackLayout Orientation="Vertical" Spacing="5"  >
 
