@@ -15,7 +15,7 @@
                     <StackLayout VerticalOptions="CenterAndExpand">
                         <Image Source="https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png" />
 
-                        <Label x:Name="lbName" Text="Khách" 
+                        <Label x:Name="lblName" Text="Khách" 
                                Style="{StaticResource LabelTitleStyle}" 
                                HorizontalOptions="Center" FontSize="25"/>
                         
@@ -30,11 +30,11 @@
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Label  Text="SĐT:" 
+                            <Label  Text="SĐT:"
                                     Style="{StaticResource LabelTitleStyle}" 
                                     FontSize="17" Grid.Column="0" Grid.Row="0"/>
 
-                            <Label x:Name="lbSDT" Text="Trống" 
+                            <Label x:Name="lblPhone" Text="Trống" 
                                    Style="{StaticResource LabelTitleStyle}" 
                                    Grid.Column="1" Grid.Row="0" 
                                    FontAttributes="Italic" FontSize="17" 
@@ -46,7 +46,7 @@
                                    FontSize="17" Grid.Column="0" Grid.Row="1" />
                                 
 
-                            <Label x:Name="lbEmail" Text="Trống" 
+                            <Label x:Name="lblEmail" Text="Trống" 
                                    Style="{StaticResource LabelTitleStyle}" 
                                    Grid.Column="1" Grid.Row="1" 
                                    FontAttributes="Italic" FontSize="17"  
@@ -110,12 +110,12 @@
                     
                 </Frame>
 
-                <Button x:Name="BtnLogout"  Text="Đăng xuất"  
+                    <Button x:Name="BtnLogout"  Text="Đăng xuất"  
                         BackgroundColor="LightGray" TextColor="White" 
                         Style="{StaticResource LabelTitleStyle}" 
                         CornerRadius="10" HorizontalOptions="EndAndExpand"
                         VerticalOptions="EndAndExpand"
-                        FontSize="18" ></Button>
+                        FontSize="18" Clicked="BtnLogout_Clicked" />
                 </StackLayout>
                 
             </StackLayout>

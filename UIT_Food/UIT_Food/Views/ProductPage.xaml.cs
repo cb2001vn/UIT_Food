@@ -16,5 +16,9 @@ namespace UIT_Food.Views
         {
             InitializeComponent();
         }
+        public ProductPage(User user)
+        {
+            InitializeComponent();
+        }
     }
 }

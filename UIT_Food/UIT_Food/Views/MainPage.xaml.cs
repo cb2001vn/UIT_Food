@@ -20,7 +20,18 @@ namespace UIT_Food.Views
             this.Children.Add(new SearchPage() { IconImageSource = "search.png" });
             this.Children.Add(new ProductPage() { IconImageSource = "list.png" });
             this.Children.Add(new PersonalPage() { IconImageSource = "user.png" });
-            this.Children.Add(new RestaurantPage() { IconImageSource = "home.png" });
+        }
+
+
+        public MainPage( User user)
+        {
+            InitializeComponent();
+            this.BindingContext = this;
+            this.Children.Add(new HomePage(user) { IconImageSource = "home.png" });
+            this.Children.Add(new SearchPage(user) { IconImageSource = "search.png" });
+            this.Children.Add(new ProductPage(user) { IconImageSource = "list.png" });
+            this.Children.Add(new PersonalPage(user) { IconImageSource = "user.png" });
+
         }
     }
 }

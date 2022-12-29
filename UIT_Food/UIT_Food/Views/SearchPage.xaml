@@ -6,9 +6,10 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame  CornerRadius="100" Margin="10,20,10,10" Padding="-1">
-                <SearchBar  x:Name="SearchRes" Placeholder="Tìm kiếm" PlaceholderColor="{StaticResource TextColor}"
-                            Style="{StaticResource LabelDefaultStyle}" FontSize="18"/>
+                <SearchBar  x:Name="SearchRestaurant" Placeholder="Tìm kiếm" PlaceholderColor="{StaticResource TextColor}"
+                            Style="{StaticResource LabelDefaultStyle}" FontSize="18" TextChanged="SearchRestaurant_TextChanged"/>
             </Frame>
+            
             <StackLayout Orientation="Horizontal">
                 
                 <Label  Text="Danh sách nhà hàng" 
@@ -17,16 +18,16 @@
 
             </StackLayout>
 
-            <Label x:Name="NotFound" Text="Không tìm thấy nhà hàng" 
+            <Label x:Name="NotFound" Text="Không tìm thấy nhà hàng nào :(" 
                    HorizontalOptions="Center" 
                    TextColor="{StaticResource TextColor}" 
                    IsVisible="false" Margin="10" 
                    Style="{StaticResource LabelTitleStyle}"/>
 
-            <ListView x:Name="ListRes" IsVisible="true" Margin="5,0,5,0" 
-                      RowHeight="50" HasUnevenRows="True" >
+            <ListView x:Name="ListRestaurant" IsVisible="true" Margin="5,0,5,0" 
+                      RowHeight="50" HasUnevenRows="True" ItemTapped="ListRestaurant_ItemTapped">
 
-                <ListView.ItemTemplate >
+                <ListView.ItemTemplate>
                     <DataTemplate >
                         <ViewCell >
                             <Frame CornerRadius="5" HasShadow="True" 
@@ -40,6 +41,7 @@
                                             <RowDefinition Height="0.25*"></RowDefinition>
                                             <RowDefinition Height="*"></RowDefinition>
                                         </Grid.RowDefinitions>
+                                        
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                             <ColumnDefinition Width="2*"></ColumnDefinition>

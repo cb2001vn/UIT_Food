@@ -16,6 +16,14 @@ namespace UIT_Food.Views
         {
             InitializeComponent();
         }
+        public PersonalPage(User user)
+        {
+            lblName.Text = user.HOTEN;
+            lblEmail.Text = user.EMAIL;
+            lblPhone.Text = user.SDT;
+            InitializeComponent();
+
+        }
 
         private void History_Tapped(object sender, EventArgs e)
         {
@@ -25,6 +33,12 @@ namespace UIT_Food.Views
         private void ChangeInfo_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new UpdatePage(), true);
+        }
+
+        private void BtnLogout_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+            Navigation.PushAsync(new LoginPage(),true);
         }
     }
 }

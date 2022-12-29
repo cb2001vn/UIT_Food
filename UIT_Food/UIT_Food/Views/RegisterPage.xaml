@@ -94,7 +94,7 @@
                         Style="{StaticResource LabelTitleStyle}" 
                         TextColor="White" BackgroundColor="{StaticResource TextColor}" 
                         HorizontalOptions="Center" WidthRequest="200"
-                        CornerRadius="10" Margin="20"/>  
+                        CornerRadius="10" Margin="20" Clicked="btnRegister_Clicked"/>  
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

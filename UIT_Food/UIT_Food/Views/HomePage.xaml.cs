@@ -15,18 +15,26 @@ namespace UIT_Food.Views
     public partial class HomePage : ContentPage
     {
         List<Restaurant> restaurants;
+        User HomeUser;
         public HomePage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             InitRestaurant();
         }
+        public HomePage(User user)
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();
+            InitRestaurant();
+            HomeUser = user;
+        }
 
         async void InitRestaurant()
         {
             restaurants = new List<Restaurant>();
             HttpClient httpClient = new HttpClient();
-            var ResList = await httpClient.GetStringAsync("http://192.168.1.148/webapi/api/RestaurantController/GetNhaHang");
+            var ResList = await httpClient.GetStringAsync("http://appfood.somee.com/api/RestaurantController/GetNhaHang");
             var RestListCV = JsonConvert.DeserializeObject<List<Restaurant>>(ResList);
             restaurants = RestListCV;
 
@@ -76,27 +84,27 @@ namespace UIT_Food.Views
 
         private void Restaurant1_Tapped(object sender, EventArgs e)
         {
-                
+            Navigation.PushAsync(new RestaurantPage(restaurants[5]));
         }
 
         private void Restaurant2_Tapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new RestaurantPage(restaurants[6]));
         }
 
         private void Restaurant3_Tapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new RestaurantPage(restaurants[7]));
         }
 
         private void Restaurant4_Tapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new RestaurantPage(restaurants[8]));
         }
 
         private void Restaurant5_Tapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new RestaurantPage(restaurants[9]));
         }
     }
 }
