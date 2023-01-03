@@ -84,27 +84,27 @@ namespace UIT_Food.Views
 
         private void Restaurant1_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RestaurantPage(restaurants[5]));
+            Navigation.PushAsync(new RestaurantPage(restaurants[5],HomeUser));
         }
 
         private void Restaurant2_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RestaurantPage(restaurants[6]));
+            Navigation.PushAsync(new RestaurantPage(restaurants[6], HomeUser));
         }
 
         private void Restaurant3_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RestaurantPage(restaurants[7]));
+            Navigation.PushAsync(new RestaurantPage(restaurants[7], HomeUser));
         }
 
         private void Restaurant4_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RestaurantPage(restaurants[8]));
+            Navigation.PushAsync(new RestaurantPage(restaurants[8], HomeUser));
         }
 
         private void Restaurant5_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RestaurantPage(restaurants[9]));
+            Navigation.PushAsync(new RestaurantPage(restaurants[9], HomeUser));
         }
     }
 }

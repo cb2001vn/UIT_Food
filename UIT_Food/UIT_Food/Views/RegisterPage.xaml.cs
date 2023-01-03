@@ -26,19 +26,6 @@ namespace UIT_Food.Views
                 await DisplayAlert("Thông báo", "Tạo người dùng thất bại! Mật khẩu nhập lại không đúng", "OK");
                 return;
             }
-            //User newUser = new User();
-            //string Usrname = username.Text;
-            //string Pass = password.Text;
-            //string Name = name.Text;
-            //string sdt = phone_number.Text;
-            //string Email = email.Text;
-            //string DoB = DateOfBirth.Date.ToString();
-
-            //HttpClient httpClient = new HttpClient();
-            //var code =  await httpClient.GetStringAsync("http://appfood.somee.com/api/AppFoodController/CreateUser?username=" + Usrname.ToString() + "&pw=" + Pass.ToString() + "&name=" + Name.ToString() + "&SDT="+ sdt + "&EMAIL=" + Email.ToString()+ "&NGAYSINH="+ DoB);
-            //code = code.ToString();
-            //code=code.Replace("[{\"Code\":", string.Empty);
-            //code = code.Replace("}]", string.Empty);
             User newUser = new User
             {
                 USERNAME = username.Text,
@@ -51,7 +38,7 @@ namespace UIT_Food.Views
             HttpClient http = new HttpClient();
             string jsonEnteredUser = JsonConvert.SerializeObject(newUser);
             StringContent httpContent = new StringContent(jsonEnteredUser, Encoding.UTF8, "application/json");
-            HttpResponseMessage result = await http.PostAsync("http://192.168.202.11/webapi/api/UserController/CreateUser", httpContent);
+            HttpResponseMessage result = await http.PostAsync("http://appfood.somee.com/api/UserController/CreateUser", httpContent);
             var code = await result.Content.ReadAsStringAsync();
 
             if (code == "0")

@@ -5,6 +5,7 @@
              BackgroundColor="{StaticResource BgColor}">
     <ContentPage.Content>
         <StackLayout>
+            
             <Frame  CornerRadius="100" Margin="10,20,10,10" Padding="-1">
                 <SearchBar  x:Name="SearchRestaurant" Placeholder="Tìm kiếm" PlaceholderColor="{StaticResource TextColor}"
                             Style="{StaticResource LabelDefaultStyle}" FontSize="18" TextChanged="SearchRestaurant_TextChanged"/>
@@ -28,8 +29,8 @@
                       RowHeight="50" HasUnevenRows="True" ItemTapped="ListRestaurant_ItemTapped">
 
                 <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <ViewCell >
+                    <DataTemplate>
+                        <ViewCell>
                             <Frame CornerRadius="5" HasShadow="True" 
                                    Grid.Column="1" Padding="0" 
                                    IsClippedToBounds="True" Margin="0,5,0,5" >
@@ -37,14 +38,14 @@
                                 <StackLayout Orientation="Vertical" Margin="0,10,0,10">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="0.7*"></RowDefinition>
-                                            <RowDefinition Height="0.25*"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="4*"></RowDefinition>
+                                            <RowDefinition Height="3*"></RowDefinition>
+                                            <RowDefinition Height="3*"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="6*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
                                         <Frame Padding="0" HasShadow="False" 
@@ -70,14 +71,9 @@
                                                      Grid.Column="1" Grid.Row="2">
 
                                             <Label Text="4.3/5" VerticalTextAlignment="Center" 
-                                                   Style="{StaticResource LabelTitleStyle}" 
+                                                   Style="{StaticResource LabelTitleStyle}"
+                                                   TextColor="{StaticResource YellowColor}"
                                                    HorizontalOptions="Start"/>
-
-                                            <ImageButton x:Name="BtnPlus" 
-                                                          Source="star" 
-                                                         WidthRequest="25" HeightRequest="25" 
-                                                         HorizontalOptions="End" BackgroundColor="White" 
-                                                         CornerRadius="40" Margin="5,5,5,5"/>
 
                                         </StackLayout>
                                     </Grid>

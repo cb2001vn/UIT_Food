@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIT_Food.Views.BillPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MainAmount" TargetType="Label">
+                <Setter Property="FontAttributes"    Value="Bold"/>
+                <Setter Property="FontSize"          Value="24"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="SecundaryText" TargetType="Label">
+                <Setter Property="TextColor"         Value="Gray"/>
+                <Setter Property="FontSize"          Value="20"/>
+            </Style>
+            <Style x:Key="DivisionLine" TargetType="Line">
+                <Setter Property="TranslationY"      Value="{OnPlatform Android='15', iOS='20'}"/>
+                <Setter Property="VerticalOptions"   Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="StrokeDashArray"   Value="1,6"/>
+                <Setter Property="X2"                Value="320"/>
+                <Setter Property="StrokeLineCap"     Value="Square"/>
+                <Setter Property="Stroke"            Value="Black"/>
+                <Setter Property="StrokeThickness"   Value="4"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hóa đơn" VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Style="{StaticResource LabelWellcomeStyle}" 
+                   Margin="0,20,0,0" FontSize="25"/>
+            
+            <Label x:Name="Time"  Text="September 24, 7:32pm" 
+                   HorizontalOptions="Center" VerticalOptions="Center" 
+                   Style="{StaticResource LabelDefaultStyle}"/>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="10,0,10,0" Text="Món ăn" FontAttributes="Bold" 
+                       Grid.Column="0" Grid.Row="0"  
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       Style="{StaticResource LabelTitleStyle}"/>
+
+                <Label Text="Số lượng" Grid.Column="1" Grid.Row="0" FontAttributes="Bold" 
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       Style="{StaticResource LabelTitleStyle}"/>
+
+                <Label Text="Giá" Grid.Column="2" Grid.Row="0" 
+                       FontAttributes="Bold" VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource LabelTitleStyle}"/>
+            </Grid>
+            
+            <ListView x:Name="LstBill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding TEN}" Margin="10,0,0,0" 
+                                       Grid.Column="0" Grid.Row="0" VerticalOptions="Center" 
+                                       HorizontalOptions="Center"
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+
+                                <Label Text="{Binding SOLUONG}" Grid.Column="1" 
+                                       Grid.Row="0" VerticalOptions="Center" 
+                                       HorizontalOptions="Center"
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+                                
+                                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="2"
+                                             VerticalOptions="Center" HorizontalOptions="Center">
+                                    
+                                    <Label Text="{Binding TONGGIA}" 
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+
+                                    <Label Text="VNĐ" Margin="0,0,5,0"
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+                                </StackLayout>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Grid VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label Margin="10,0,10,0"  Text="Tiền hàng:" 
+                       Grid.Column="0" Grid.Row="0" 
+                       FontSize="20" TextColor="#4f4f4f" 
+                       FontAttributes="Bold" 
+                       Style="{StaticResource LabelTitleStyle}"/>
+                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" >
+                    
+                    <Label x:Name="Money"  Text="200.000"  
+                       FontSize="20" 
+                       FontAttributes="Bold" Margin="10,0,10,0" 
+                       Style="{StaticResource LabelDefaultStyle}"/>
+                    
+                    <Label Text="VNĐ"  
+                       FontSize="20" 
+                       FontAttributes="Bold" Margin="10,0,10,0" 
+                       Style="{StaticResource LabelDefaultStyle}"/>
+                </StackLayout>
+
+
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                
+                <Label Margin="10,0,10,0"  Text="Phí ship:" 
+                   FontSize="22" 
+                   FontAttributes="Bold" 
+                   Style="{StaticResource LabelTitleStyle}"/>
+
+                <Label x:Name="MoneyShip"  Text="25.000 VNĐ"  FontSize="22" 
+                   FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                       Margin="0,0,10,0"
+                   Style="{StaticResource LabelDefaultStyle}"/>
+                
+            </StackLayout>
+
+            
+            <!--<ListView x:Name="LstRes">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.56*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label  x:Name="ResName" Text="{Binding}" 
+                                        Margin="10,0,0,0" VerticalOptions="Center" 
+                                        Grid.Column="0" Grid.Row="0" FontSize="15" 
+                                        TextColor="#4f4f4f" FontAttributes="Bold" 
+                                        Style="{StaticResource LabelDefaultStyle}"/>
+                                
+                                <Label Grid.Column="1" Grid.Row="0" Text="20000" 
+                                       VerticalOptions="Center" FontSize="15" 
+                                       FontAttributes="Bold" Margin="0,0,10,0" 
+                                       HorizontalOptions="End" 
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+                                
+                                <Label Grid.Column="2" Grid.Row="0" 
+                                       Text="VNĐ"  VerticalOptions="Center" 
+                                       FontSize="15" FontAttributes="Bold" 
+                                       Margin="0,0,10,0" HorizontalOptions="End" 
+                                       Style="{StaticResource LabelDefaultStyle}"/>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <BoxView BackgroundColor="Gray" HeightRequest="1" Margin="10,0,10,0"></BoxView>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label  Text="Tổng tiền:" Margin="10,0,10,0" 
+                        Grid.Column="0" Grid.Row="0" FontSize="24" 
+                        FontAttributes="Bold" 
+                        Style="{StaticResource LabelTitleStyle}"/>
+                
+                <Label x:Name="Total" Grid.Column="1" Grid.Row="0" 
+                       Text="250.000"  FontSize="24" 
+                       FontAttributes="Bold" Margin="0,0,10,10" 
+                       HorizontalOptions="End" Style="{StaticResource LabelDefaultStyle}"/>
+                
+                <Label Grid.Column="2" Grid.Row="0" Text="VNĐ"  
+                       VerticalOptions="Center" FontSize="20"
+                       FontAttributes="Bold" Margin="0,0,10,10" 
+                       HorizontalOptions="End" Style="{StaticResource LabelDefaultStyle}"/>
+                
+            </Grid>
+            
+            <BoxView BackgroundColor="Gray" HeightRequest="1" Margin="10,0,10,0"></BoxView>
+            
+            <Label x:Name="USname" Text="User" VerticalOptions="Center" 
+                   HorizontalOptions="Start" 
+                   Style="{StaticResource LabelDefaultStyle}" 
+                   Margin="10,0,0,0" FontSize="18"/>
+            
+            <Label x:Name="USSDT" Text="User" 
+                   VerticalOptions="Center" HorizontalOptions="Start" 
+                   Style="{StaticResource LabelDefaultStyle}" Margin="10,0,0,0" FontSize="18"/>
+            
+            <Label Text="Địa chỉ:" VerticalOptions="Center" 
+                   HorizontalOptions="Start"
+                   Style="{StaticResource LabelDefaultStyle}" Margin="10,0,0,0" FontSize="18"/>
+            
+            <Entry x:Name="MyLocation"  FontAttributes="Bold" 
+                   FontSize="16" Style="{StaticResource LabelDefaultStyle}" Margin="8,0,8,0" ></Entry>
+            
+            <Grid Grid.Row="1" ColumnDefinitions="*,*" >
+                
+                <Button x:Name="BtnLater" Clicked="BtnLater_Clicked" 
+                        Grid.Column="0" Style="{StaticResource LabelDefaultStyle}" 
+                        ImageSource="Arrow" Text="Đặt hàng sau" TextColor="Black" 
+                        FontAttributes="Bold" BackgroundColor="#e4e4e4" 
+                        CornerRadius="10" HeightRequest="50" Margin="10,5,10,20"/>
+                
+                <Button x:Name="BtnOrder" Clicked="BtnOrder_Clicked" 
+                        Grid.Column="1" Text="Đặt hàng" 
+                        Style="{StaticResource LabelDefaultStyle}" 
+                        TextColor="White" FontAttributes="Bold" 
+                        BackgroundColor="{StaticResource AccentColor}" 
+                        CornerRadius="10" Margin="5,5,10,20" HeightRequest="50"/>
+                
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

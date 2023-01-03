@@ -153,7 +153,9 @@
 
                                     <Label x:Name="Name1" Text="Pasta food" 
                                            Style="{StaticResource LabelTitleStyle}" 
-                                           HeightRequest="50"/>
+                                           HeightRequest="75" WidthRequest="100"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
 
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">
@@ -229,7 +231,9 @@
 
                                     <Label x:Name="Name2" Text="Pasta food" 
                                            Style="{StaticResource LabelTitleStyle}" 
-                                           HeightRequest="50"/>
+                                           HeightRequest="75" WidthRequest="100"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
 
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">
@@ -305,7 +309,9 @@
 
                                     <Label x:Name="Name3" Text="Pasta food" 
                                            Style="{StaticResource LabelTitleStyle}" 
-                                           HeightRequest="50"/>
+                                           HeightRequest="75" WidthRequest="100"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
 
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">
@@ -381,7 +387,9 @@
 
                                     <Label x:Name="Name4" Text="Pasta food" 
                                            Style="{StaticResource LabelTitleStyle}" 
-                                           HeightRequest="50"/>
+                                           HeightRequest="75" WidthRequest="100"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
 
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">
@@ -457,7 +465,9 @@
 
                                     <Label x:Name="Name5" Text="Pasta food" 
                                            Style="{StaticResource LabelTitleStyle}" 
-                                           HeightRequest="50"/>
+                                           HeightRequest="75" WidthRequest="100"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
 
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">

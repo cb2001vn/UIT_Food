@@ -88,7 +88,8 @@
                         TextColor="White" BackgroundColor="{StaticResource AccentColor}" 
                         FontSize="17" WidthRequest="120"
                         HorizontalOptions="Center"   VerticalOptions="EndAndExpand"
-                        CornerRadius="15" Margin="20" />
+                        CornerRadius="15" Margin="20" 
+                        Clicked="BtnUpdate_Clicked"/>
 
             </StackLayout>
         </ScrollView>

@@ -17,19 +17,19 @@ namespace UIT_Food.Views
             InitializeComponent();
             this.BindingContext = this;
             this.Children.Add(new HomePage() { IconImageSource = "home.png"});
-            this.Children.Add(new SearchPage() { IconImageSource = "search.png" });
-            this.Children.Add(new ProductPage() { IconImageSource = "list.png" });
+            this.Children.Add(new SearchPage() { IconImageSource = "list.png" });
+            this.Children.Add(new ProductPage() { IconImageSource = "basket.png" });
             this.Children.Add(new PersonalPage() { IconImageSource = "user.png" });
         }
 
 
-        public MainPage( User user)
+        public MainPage(User user)
         {
             InitializeComponent();
             this.BindingContext = this;
             this.Children.Add(new HomePage(user) { IconImageSource = "home.png" });
-            this.Children.Add(new SearchPage(user) { IconImageSource = "search.png" });
-            this.Children.Add(new ProductPage(user) { IconImageSource = "list.png" });
+            this.Children.Add(new SearchPage(user) { IconImageSource = "list.png" });
+            this.Children.Add(new ProductPage(user) { IconImageSource = "basket.png" });
             this.Children.Add(new PersonalPage(user) { IconImageSource = "user.png" });
 
         }
