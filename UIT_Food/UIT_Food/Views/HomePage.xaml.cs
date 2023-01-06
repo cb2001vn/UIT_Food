@@ -44,6 +44,12 @@ namespace UIT_Food.Views
             Name4.Text = restaurants[8].TEN;
             Name5.Text = restaurants[9].TEN;
 
+            Picture1.Source = restaurants[5].IMG;
+            Picture2.Source = restaurants[6].IMG;
+            Picture3.Source = restaurants[7].IMG;
+            Picture4.Source = restaurants[8].IMG;
+            Picture5.Source = restaurants[9].IMG;
+
         }
 
         private async void GetLocation_Tapped(object sender, EventArgs e)

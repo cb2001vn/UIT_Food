@@ -153,7 +153,8 @@ namespace UIT_Food.Views
             }
 
             await DisplayAlert("Thông báo", "Đặt hàng thành công\nThời gian giao hàng dự kiến: " + time2.ToString() + "\nMã Hóa đơn: " + BillCV, "OK");
-            await Navigation.PopAsync(true);
+            await httpClient.GetAsync("http://appfood.somee.com/api/CartController/DeleteAllGioHang?mand=" + User.MAND);
+            await Navigation.PopModalAsync();
             await Navigation.PushAsync(new MainPage(User));
 
         }
