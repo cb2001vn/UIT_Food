@@ -34,7 +34,7 @@ namespace UIT_Food.Views
             HttpResponseMessage result = await http.PostAsync("http://appfood.somee.com/api/UserController/CheckOneUser", httpContent);
             var user = await result.Content.ReadAsStringAsync();
             //Kiem tra ket qua api
-            if (user == "")
+            if (user == "[]")
             {
                 await DisplayAlert("Đăng nhập thất bại", "Mật khẩu hoặc tên người dùng không đúng", "OK");
             }

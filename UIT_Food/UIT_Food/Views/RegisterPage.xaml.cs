@@ -43,12 +43,13 @@ namespace UIT_Food.Views
 
             if (code == "0")
             {
-                await DisplayAlert("Thông báo", "Username đã tồn tại.", "OK");
+                await DisplayAlert("Thông báo", "tên đăng nhập đã tồn tại.", "OK");
             }
             else if (Int32.Parse(code) > 0)
             {
-                await DisplayAlert("Thông báo", "Tạo người dùng thành công.", "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new LoginPage(), false);
+                await DisplayAlert("Thông báo", "Tạo tài khoản mới thành công.", "OK");
+                await Navigation.PopAsync();
+                await Navigation.PushAsync(new LoginPage(), false);
             }
             else
             {
