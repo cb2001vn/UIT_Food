@@ -79,7 +79,7 @@ namespace UIT_Food.Views
         private void ListRestaurant_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Restaurant slRes = (Restaurant)ListRestaurant.SelectedItem;
-            Navigation.PushAsync(new RestaurantPage(slRes,User), true);
+            Navigation.PushAsync(new RestaurantPage(slRes,User), false);
         }
     }
 }

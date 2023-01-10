@@ -44,7 +44,6 @@ namespace UIT_Food.Views
                 user = user.Replace("]", string.Empty); // chuyen array thanh object
                 var UserCV = JsonConvert.DeserializeObject<User>(user);
                 User user1 = UserCV;
-                await Navigation.PopAsync();
                 await Navigation.PushAsync(new MainPage(user1));
             }
         }

@@ -77,6 +77,7 @@ namespace UIT_Food.Views
             }
             Money.Text = tien.ToString();
             Ship = 25000;
+            MoneyShip.Text = Ship.ToString();
             Total.Text = (tien + Ship).ToString();
 
             //lay vitri hien tai
@@ -154,8 +155,8 @@ namespace UIT_Food.Views
 
             await DisplayAlert("Thông báo", "Đặt hàng thành công\nThời gian giao hàng dự kiến: " + time2.ToString() + "\nMã Hóa đơn: " + BillCV, "OK");
             await httpClient.GetAsync("http://appfood.somee.com/api/CartController/DeleteAllGioHang?mand=" + User.MAND);
-            await Navigation.PopModalAsync();
-            await Navigation.PushAsync(new MainPage(User));
+            await Navigation.PushModalAsync(new MainPage(User));
+ 
 
         }
     }

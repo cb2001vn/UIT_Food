@@ -144,6 +144,7 @@
 
                                     <Frame Padding="0" HasShadow="False" 
                                            HeightRequest="150"
+                                           WidthRequest="240"
                                            CornerRadius="5" IsClippedToBounds="True" >
 
                                         <Image x:Name="Picture1"
@@ -222,6 +223,7 @@
 
                                     <Frame Padding="0" HasShadow="False" 
                                            HeightRequest="150"
+                                           WidthRequest="240"
                                            CornerRadius="5" IsClippedToBounds="True" >
 
                                         <Image x:Name="Picture2"
@@ -300,6 +302,7 @@
 
                                     <Frame Padding="0" HasShadow="False" 
                                            HeightRequest="150"
+                                           WidthRequest="240"
                                            CornerRadius="5" IsClippedToBounds="True" >
 
                                         <Image x:Name="Picture3"
@@ -378,6 +381,7 @@
 
                                     <Frame Padding="0" HasShadow="False" 
                                            HeightRequest="150"
+                                           WidthRequest="240"
                                            CornerRadius="5" IsClippedToBounds="True" >
 
                                         <Image x:Name="Picture4"
@@ -456,6 +460,7 @@
 
                                     <Frame Padding="0" HasShadow="False" 
                                            HeightRequest="150"
+                                           WidthRequest="240"
                                            CornerRadius="5" IsClippedToBounds="True" >
 
                                         <Image x:Name="Picture5"

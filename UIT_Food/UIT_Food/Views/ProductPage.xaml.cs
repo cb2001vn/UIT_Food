@@ -51,7 +51,6 @@ namespace UIT_Food.Views
 
         private void btnThanhToan_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync(true);
             Navigation.PushAsync(new BillPage(carts,User));
         }
 
